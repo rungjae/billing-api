@@ -11,7 +11,7 @@ public class BillingController {
 
     private static final int BASE_FEE = 10_000;   // 기본료
     private static final int FREE_USAGE = 100;    // 기본 제공량
-    private static final int UNIT_PRICE = 50;     // 초과 단위당 요금
+    private static final int UNIT_PRICE = 500000000;     // 초과 단위당 요금
 
     // 예: GET /bill?usage=150
     @GetMapping("/bill")
