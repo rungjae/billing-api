@@ -9,7 +9,7 @@ import java.util.Map;
 @RestController   // 이 클래스의 메서드 반환값을 JSON으로 응답
 public class BillingController {
 
-    private static final int BASE_FEE = 10_000;   // 기본료
+    private static final int BASE_FEE = 12_000;   // 기본료
     private static final int FREE_USAGE = 100;    // 기본 제공량
     private static final int UNIT_PRICE = 50;     // 초과 단위당 요금
 
