@@ -16,10 +16,14 @@ public class BillingController {
     // 예: GET /bill?usage=150
     @GetMapping("/bill")
     public Map<String, Object> calc(@RequestParam int usage) {
-        int extra = Math.max(0, usage - FREE_USAGE) * UNIT_PRICE; // 초과분만 과금
+        int extra = Math.max(0, usage - FREE_USAGE) * UNIT_PRICE;
+        int amount = BASE_FEE + extra;   // 공급가액
+        int vat = amount / 10;           // 부가세 10%
         return Map.of(
                 "usage", usage,
-                "amount", BASE_FEE + extra
+                "amount", amount,
+                "vat", vat,
+                "total", amount + vat     // 최종 청구액
         );
     }
 
